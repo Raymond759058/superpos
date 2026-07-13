@@ -1,0 +1,180 @@
+/* SuperPOS — Main Stylesheet */
+
+:root {
+  --pos-amber: #f59e0b;
+  --pos-amber-dark: #d97706;
+  --pos-bg-dark: #111;
+  --pos-sidebar: #0d0d0d;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--pos-sidebar) !important;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #888;
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 2px;
+  transition: all .15s;
+}
+.sidebar-link:hover {
+  background: #1a1a1a;
+  color: #ccc;
+}
+.sidebar-link.active {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--pos-amber);
+}
+.sidebar-link i, .sidebar-link .bi {
+  width: 16px;
+  font-size: 15px;
+}
+.sidebar-section {
+  font-size: 10px;
+  color: #444;
+  padding: 4px 10px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.card {
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 10px;
+}
+.card-product {
+  cursor: pointer;
+  transition: all .15s;
+  font-size: 12px;
+  border-radius: 8px !important;
+}
+.card-product:hover {
+  border-color: var(--pos-amber) !important;
+  background: rgba(245,158,11,.05) !important;
+  transform: translateY(-1px);
+}
+
+/* Buttons */
+.btn-warning {
+  background-color: var(--pos-amber);
+  border-color: var(--pos-amber);
+  color: #111;
+  font-weight: 500;
+}
+.btn-warning:hover {
+  background-color: var(--pos-amber-dark);
+  border-color: var(--pos-amber-dark);
+  color: #111;
+}
+.btn-xs {
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+}
+
+/* Payment buttons */
+.pay-btn {
+  font-size: 11px;
+  border-radius: 6px;
+  transition: all .15s;
+}
+.pay-btn.active {
+  background-color: var(--pos-amber) !important;
+  border-color: var(--pos-amber) !important;
+  color: #111 !important;
+}
+
+/* Category buttons */
+.category-btn.active {
+  background-color: var(--pos-amber) !important;
+  border-color: var(--pos-amber) !important;
+  color: #111 !important;
+}
+
+/* Receipt paper style */
+.receipt-paper {
+  background: #fff;
+  color: #111;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.border-dashed {
+  border-style: dashed !important;
+  border-color: #ccc !important;
+  opacity: 1;
+}
+
+/* Purple badge (admin) */
+.bg-purple {
+  background-color: #7c3aed !important;
+}
+
+/* Navbar */
+.navbar {
+  border-bottom: 1px solid #222;
+}
+
+/* Table improvements */
+.table th {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.table td {
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+/* Font monospace for prices */
+.font-monospace {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* Input focus */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--pos-amber);
+  box-shadow: 0 0 0 .2rem rgba(245,158,11,.25);
+}
+
+/* Cart item */
+.cart-item {
+  background: #f8f9fa;
+  border-radius: 6px;
+  transition: all .1s;
+}
+.cart-item:hover {
+  background: #f0f0f0;
+}
+
+/* Print styles */
+@media print {
+  /* hide everything by default */
+  html, body { height: auto !important; }
+  body > * { display: none !important; }
+  /* show only the receipt page and its children */
+  #receiptPage, #receiptPage * { display: block !important; }
+  /* ensure receipt content uses full printable width and no extra background */
+  #receiptPage { position: static !important; margin: 0 !important; padding: 0 !important; background: transparent !important; }
+  #receiptContent { width: 100% !important; background: transparent !important; box-shadow: none !important; border: none !important; }
+  .receipt-paper { background: transparent !important; border: none !important; box-shadow: none !important; }
+  /* hide UI chrome */
+  .btn, .modal-footer, .navbar, .sidebar { display: none !important; }
+  /* printing color adjustment (may be overridden by browser settings) */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #aaa; }
