@@ -1,9 +1,10 @@
 <?php
 // SuperPOS Configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'Raymond759058');
-define('DB_NAME', 'superpos');
+define('DB_USER', 'synergy1_yenping');
+define('DB_PASS', 'R.zb0ZwEuGZ}*fW2');
+define('DB_NAME', 'synergy1_raymondtanzijian_cashier');
+define('BASE_URL','/superpos');
 
 define('APP_NAME', 'SuperPOS');
 define('APP_VERSION', '1.0.0');
@@ -106,6 +107,5 @@ function formatRM(float $amount): string {
     return 'RM ' . number_format($amount, 2);
 }
 
-// Base URL (adjust if in subdirectory)
-define('BASE_URL', 's');
+
 ?>

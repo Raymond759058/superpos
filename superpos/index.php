@@ -4,7 +4,7 @@ startSession();
 
 // Already logged in
 if (isLoggedIn()) {
-    header('Location: ' . (isAdmin() ? '/admin/reports.php' : '/cashier/pos.php'));
+    header('Location: ' . (isAdmin() ? '/admin/reports.php' : BASE_URL . '/cashier/pos.php'));
     exit;
 }
 
